@@ -5,11 +5,18 @@ import com.accp.biz.StatisticalBiz;
 import com.accp.biz.StayRegisterBiz;
 import com.accp.entity.Pager;
 import com.accp.entity.StayRegister;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.OutputStream;
 import java.util.Date;
 
 
@@ -25,6 +32,8 @@ public class StatisticalController {
 
     @Resource
     private ConsumptionDetailsBiz consumptionDetailsBiz;
+
+
 
     @RequestMapping("/toinformation.do")
     public String toInformation(StayRegister stayRegister,Model model){

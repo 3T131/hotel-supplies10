@@ -42,9 +42,7 @@
             tooltip: {
                 trigger: 'axis'
             },
-            legend: {
-                data:['散客','团队']
-            },
+
             toolbox: {
 		        feature: {
 		            saveAsImage: {}
@@ -66,17 +64,9 @@
 	            type : 'value'
 	        }] ,
             series: [
-            {
-	            name:'散客',
-	            type:'line',
-	            stack: '总量',
-	            areaStyle: {normal: {}},
-	            data:[${sZongFeiYong12}, ${sZongFeiYong11}, ${sZongFeiYong10}, ${sZongFeiYong9}, 
-	                  ${sZongFeiYong8}, ${sZongFeiYong7}, ${sZongFeiYong6}, ${sZongFeiYong5},
-	                  ${sZongFeiYong4}, ${sZongFeiYong3}, ${sZongFeiYong2}, ${sZongFeiYong1}]
-	        },
+
 	        {
-	            name:'团队',
+	            name:'月收入',
 	            type:'line',
 	            stack: '总量',
 	            label: {

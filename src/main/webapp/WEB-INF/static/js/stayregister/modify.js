@@ -150,7 +150,7 @@ function payfunction(){
 }
 
 function deletefunction(){
-    parent.document.getElementById('Mainid').src='${ctx}/StayRegister/tolist.do';
+    parent.document.getElementById('Mainid').src=getRootPath()+'/StayRegister/tolist.do';
 }
 
 function onchangeStayNumberId(){

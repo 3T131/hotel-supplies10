@@ -211,6 +211,7 @@
 			         <label class="yansered" style="margin-top:18px;">*</label>
 			    </div>
 		    </div>
+<c:if test="${userSession.targetTypeID==55}">
 			  <div class="span3 ">
 				  <label class="labelroomnumber">员工类别：</label>
 				  <select name="targetTypeID" class="cboone inputone">
@@ -221,6 +222,7 @@
 					  </c:forEach>
 				  </select>
 			  </div>
+</c:if>
 		  </div>
 	    </div>
 	    

@@ -15,18 +15,19 @@ MySQL - 5.7.17-log : Database - grogshop
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`grogshop` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 /*Table structure for table `attribute` */
+USE grogshop;
 
 DROP TABLE IF EXISTS `attribute`;
 
 CREATE TABLE `attribute` (
-  `attributeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '属性ID',
-  `attributeName` varchar(30) DEFAULT NULL COMMENT '属性名称',
+  `attributeId` INT(11) NOT NULL AUTO_INCREMENT COMMENT '属性ID',
+  `attributeName` VARCHAR(30) DEFAULT NULL COMMENT '属性名称',
   PRIMARY KEY (`attributeId`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=INNODB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 /*Data for the table `attribute` */
 
-insert  into `attribute`(`attributeId`,`attributeName`) values (1,'房态'),(2,'客房等级'),(3,'商品类别'),(4,'支付方式'),(5,'出租方式'),(6,'结账单位'),(7,'旅客类别'),(8,'性别'),(9,'民族'),(10,'证件'),(11,'文化程度'),(12,'事由'),(13,'旅客级别'),(14,'对象类别'),(15,'计量单位'),(16,'预定状态'),(17,'结账');
+INSERT  INTO `attribute`(`attributeId`,`attributeName`) VALUES (1,'房态'),(2,'客房等级'),(3,'商品类别'),(4,'支付方式'),(5,'出租方式'),(6,'结账单位'),(7,'旅客类别'),(8,'性别'),(9,'民族'),(10,'证件'),(11,'文化程度'),(12,'事由'),(13,'旅客级别'),(14,'对象类别'),(15,'计量单位'),(16,'预定状态'),(17,'结账');
 
 /*Table structure for table `attributedetails` */
 

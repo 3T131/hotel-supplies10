@@ -38,7 +38,7 @@ public class RoomController {
                        @RequestParam(name = "currentPage",defaultValue = "1")Integer currentPage){
         Pager<Room> pager=new Pager<Room>();
         pager.setPageNo(currentPage);
-        pager.setPageSize(5);
+        pager.setPageSize(10);
         pager.setParams(room);
         room.setRoomNumber(roomNumber);
         roomBiz.listPage(pager);

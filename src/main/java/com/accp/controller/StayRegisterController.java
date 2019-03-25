@@ -339,6 +339,7 @@ public class StayRegisterController {
         stayRegister2.setPayTime(stayRegister.getPayTime());
         stayRegister2.setPayWayID(stayRegister.getPayWayID());
         stayRegister2.setRoomID(stayRegister.getRoomID());
+        stayRegister2.setRemind(0);
         if(this.stayRegisterBiz.updateIsBill(stayRegister2)){
             return "redirect:/StayRegister/tolist.do";
         }else{

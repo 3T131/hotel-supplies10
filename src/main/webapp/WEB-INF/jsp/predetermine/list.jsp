@@ -168,11 +168,7 @@
 			      <input id="nameId" class="widthone" value="${passenger.name }" name="name"
                          style="height: 25px;" type="text" readonly="readonly">
              </div>
-              <div class="span2">
-                 <label>证件类型：</label>
-                 <input id="papersTypeId" class="widthone" value="${passenger.papersName}"
-                        name="papersName" style="height: 25px;" type="text" readonly="readonly">
-             </div>
+
               <div class="span2">
                   <label>证件号：</label>
 			      <input id="papersNumberId" class="widthone"value="${passenger.papersNumber}"
@@ -314,7 +310,6 @@
 	          <th >选择</th>
 	          <th >姓名</th>
 	          <th >性别</th>
-	          <th >证件类型</th>
 	          <th >证件号码</th>
                 <th>联系电话</th>
 	        </tr>

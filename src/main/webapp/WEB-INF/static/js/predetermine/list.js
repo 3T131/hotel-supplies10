@@ -78,7 +78,6 @@ function souSuo(){
                         '        <td><input type="radio" name="idThree" value="'+result[i].pId +'"></td>\n' +
                         '     <td>'+result[i].name +'</td>\n' +
                         '          <td>'+result[i].genderName +'</td>\n' +
-                        '        <td>'+ result[i].papersName+'</td>\n' +
                         '         <td>'+result[i].papersNumber +'</td>\n' +
                         '        <td>'+ result[i].phoneNumber+'</td>\n' +
 
@@ -98,7 +97,6 @@ function confirmfunction(){
     var table=document.getElementById("tbodyThree");
     var selectedIndex="";
     var name="";
-    var papersType="";
     var rId="";
     var phone="";
     document.getElementById("rId").value=null;
@@ -110,12 +108,10 @@ function confirmfunction(){
         selectedIndex=this.parentNode.parentNode.rowIndex;         // 获取选中的索引 单装他的变量不是数组，可以为数组
         rId=table.rows[selectedIndex-1].cells[0].innerHTML;// 获取选中的索引的 单元格的值
         name=table.rows[selectedIndex-1].cells[1].innerHTML;
-        papersType=table.rows[selectedIndex-1].cells[3].innerHTML;     // 获取选中的索引的 单元格的值
-        papersNumber=table.rows[selectedIndex-1].cells[4].innerHTML;     // 获取选中的索引的 单元格的值
-        phone=table.rows[selectedIndex-1].cells[5].innerHTML;     // 获取选中的索引的 单元格的值
+        papersNumber=table.rows[selectedIndex-1].cells[3].innerHTML;     // 获取选中的索引的 单元格的值
+        phone=table.rows[selectedIndex-1].cells[4].innerHTML;     // 获取选中的索引的 单元格的值
     });
     document.getElementById("nameId").value=name;
-    document.getElementById("papersTypeId").value=papersType;
     document.getElementById("papersNumberId").value=papersNumber;
     document.getElementById("contactPhoneNumber").value=phone;
 
@@ -160,7 +156,6 @@ function gaiBian(o){
     document.getElementById("teamCodeId").value=null;
     document.getElementById("contactPhoneNUmberId").value=null;
     document.getElementById("nameId").value=null;
-    document.getElementById("papersTypeId").value=null;
     document.getElementById("papersNumberId").value=null;
     document.getElementById("contactPhoneNumber").value=null;
         $("#form22").submit();
@@ -174,7 +169,6 @@ function confirmRarget(){
     var principal="";
     var contactPhoneNUmber="";
     document.getElementById("nameId").value=null;
-    document.getElementById("papersTypeId").value=null;
     document.getElementById("papersNumberId").value=null;
     document.getElementById("contactPhoneNumber").value=null;
     $('input[name="idTwo"]:checked').each(function(){
@@ -208,14 +202,24 @@ function selectTwo(){
 
 function arrangeRoom(){
     var chk_value=[];
+    var table=document.getElementById("tbody");
+    var selectedIndex="";
+    var code="";
     $('input[name="id"]:checked').each(function(){
         chk_value.push($(this).val());
+        selectedIndex=this.parentNode.parentNode.rowIndex;
+        code=table.rows[selectedIndex-1].cells[9].innerHTML;
     });
     if(chk_value!=""){
        if(chk_value.toString().indexOf(",")>0){
            alert("请选择一条数据进行安排房间");
        }else{
-           parent.document.getElementById("Mainid").src=getRootPath()+'/Predetermine/toPredeterRoom.do?predetermineId='+chk_value;
+           if(code=="已安排"){
+               alert("该条记录已被安排，不能操作。")
+           }else{
+               parent.document.getElementById("Mainid").src=getRootPath()+'/Predetermine/toPredeterRoom.do?predetermineId='+chk_value;
+           }
+
        }
     }else{
         alert("请选择一条数据进行安排房间");

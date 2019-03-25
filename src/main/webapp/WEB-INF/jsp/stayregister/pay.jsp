@@ -222,9 +222,11 @@
 		        <label class="floatont">结账方式：</label>
 		         <select id="payWayId" class="yangse" style="width:70%;height:27px;">
 		            <c:forEach items="${listOne}" var="item">
+						<c:if test="${item.attributeDetailsId==21}">
 			          <option value="${item.attributeDetailsId}" <c:if test="${item.attributeDetailsId==21}">selected="selected"</c:if>>
 			            ${item.attributeDetailsName}
 			          </option>
+						</c:if>
 			        </c:forEach> 
 		          </select>
 		     </div>

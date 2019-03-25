@@ -424,7 +424,38 @@
 		<!--inline scripts related to this page-->
 
 		<script type="text/javascript">
+            //项目绝对路径
+            function getRootPath(){
+                //获取当前网址，如： http://localhost:8083/proj/meun.jsp
+                var curWwwPath = window.document.location.href;
+                //获取主机地址之后的目录，如： proj/meun.jsp
+                var pathName = window.document.location.pathname;
+                var pos = curWwwPath.indexOf(pathName);
+                //获取主机地址，如： http://localhost:8083
+                var localhostPath = curWwwPath.substring(0, pos);
+                return(localhostPath );
+            }
+
+
 			$(function() {
+
+                setInterval(function(){
+                    $.ajax({
+                        type: "POST",
+                        url:  getRootPath()+ '/user/ajLogin.json',
+                        dataType: "json",
+                        success: function (data) {
+                            if(data){
+                                alert("当前用户已在别的地方登陆")
+                                location.href=getRootPath()+'/user/login.to';
+                            }
+                        },
+                        error: function (data) {
+                            alert("数据访问错误！");
+                        }
+                    });
+                },2000);
+
 				$('.easy-pie-chart.percentage').each(function(){
 					var $box = $(this).closest('.infobox');
 					var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
